@@ -19,7 +19,10 @@ namespace PartyInvites.Controllers
         public ViewResult Index() //This action method creates and renders a view. The ViewResult object returned instructs the MVC to render
                                   //a view.
         {
-            return View("MyView");
+            int hour = DateTime.Now.Hour;
+            ViewBag.Greeting = hour < 12 ? "Good Morning" : "Good Afternoon";
+            return View("MyView");//MVC renders a view and returns the html properties. (View in this context is the view folder)
+                                  //MyView is the name of the cshtml file that is returned.
         }
     }
 }

@@ -33,8 +33,8 @@ namespace PartyInvites.Controllers
         [HttpPost] //This tells MVC that this method should be used only for POST requests
         public ViewResult RsvpForm(GuestResponse guestResponse)
         {
-            //TODO: store response from guest
-            return View();
+            Repository.AddResponse(guestResponse);
+            return View("Thanks", guestResponse);
         }
     }
 }

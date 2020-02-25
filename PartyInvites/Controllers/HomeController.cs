@@ -11,9 +11,15 @@ namespace PartyInvites.Controllers
 {
     public class HomeController : Controller //Controllers will always have Controller as the suffix, in this case this Controller is called Home.
     {
-        public string Index() //This method displays hello world when the web application is ran.
+        //public string Index() //This is a action method that simply displays hello world when the web application is ran.
+        //{
+        //    return "Hello World"; 
+        //}
+
+        public ViewResult Index() //This action method creates and renders a view. The ViewResult object returned instructs the MVC to render
+                                  //a view.
         {
-            return "Hello World"; 
+            return View("MyView");
         }
     }
 }

@@ -24,5 +24,11 @@ namespace PartyInvites.Controllers
             return View("MyView");//MVC renders a view and returns the html properties. (View in this context is the view folder)
                                   //MyView is the name of the cshtml file that is returned.
         }
+
+        public ViewResult RsvpForm()
+        {
+            return View(); //The RsvpForm action method calls the View method here without an argument, which tells the MVC to render the
+                           //the default view associvated with the action method, which is a view with the same name as the action method.
+        }
     }
 }

@@ -33,8 +33,16 @@ namespace PartyInvites.Controllers
         [HttpPost] //This tells MVC that this method should be used only for POST requests
         public ViewResult RsvpForm(GuestResponse guestResponse)
         {
-            Repository.AddResponse(guestResponse);
-            return View("Thanks", guestResponse);
+            if (ModelState.IsValid)
+            {
+                Repository.AddResponse(guestResponse);
+                return View("Thanks", guestResponse);
+            }
+            else
+            {
+                // there is a validation error
+                return View();
+            }
         }
         public ViewResult ListResponses()//This action method calls the View Method using the Repository.Responses property as the argument.
         {

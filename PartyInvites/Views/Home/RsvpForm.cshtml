@@ -1,7 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-
+﻿
 @model PartyInvites.Models.GuestResponse
 @{
     Layout = null;
@@ -16,23 +13,20 @@
 </head>
 <body>
     <form asp-action="RsvpForm" method="post">
-
+        <div asp-validation-summary="All"></div>
         <p>
             <label asp-for="Name">Your Name:</label>
-            <input type="text" id="Name" name="Name" value="" />
-            <label asp-for="Name" />
+            <input asp-for="Name" />      
         </p>
         <p>
-            <label asp-for="Email">Your Email</label>
-            <input type="text" id="Email" email="Email" value="" />
-            <label asp-for="Email" />
+            <label asp-for="Email">Your Email:</label>
+            <input asp-for="Email" />
         </p>
         <p>
-            <label asp-for="Phone">Your Phone</label>
-            <input type="text" id="Phone" phone="Phone" value="" />
-            <label asp-for="Phone" />
+            <label asp-for="Phone">Your Phone:</label>
+            <input asp-for="Phone" />
         </p>
-        <p>
+<p>
             <label>Will you attend?</label>
             <select asp-for="WillAttend">
                 <option value="">Choose an option</option>

@@ -16,19 +16,20 @@
 </head>
 <body>
     <form asp-action="RsvpForm" method="post">
+
         <p>
             <label asp-for="Name">Your Name:</label>
-            <input type="text" id="Name" value="" />
+            <input type="text" id="Name" name="Name" value="" />
             <label asp-for="Name" />
         </p>
         <p>
             <label asp-for="Email">Your Email</label>
-            <input type="text" id="Email" value="" />
+            <input type="text" id="Email" email="Email" value="" />
             <label asp-for="Email" />
         </p>
         <p>
             <label asp-for="Phone">Your Phone</label>
-            <input type="text" id="Phone" value="" />
+            <input type="text" id="Phone" phone="Phone" value="" />
             <label asp-for="Phone" />
         </p>
         <p>

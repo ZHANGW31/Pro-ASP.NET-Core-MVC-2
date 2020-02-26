@@ -36,5 +36,10 @@ namespace PartyInvites.Controllers
             Repository.AddResponse(guestResponse);
             return View("Thanks", guestResponse);
         }
+        public ViewResult ListResponses()//This action method calls the View Method using the Repository.Responses property as the argument.
+        {
+            
+            return View(Repository.Responses.Where(r => r.WillAttend == true));
+        }
     }
 }
